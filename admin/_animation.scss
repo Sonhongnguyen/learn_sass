@@ -1,0 +1,32 @@
+$scaleSize: 0.8;
+@keyframes zoomIn8 {
+    from {
+        opacity: 0;
+        transform: scale3d($scaleSize, $scaleSize, $scaleSize);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes zoomOut8 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d($scaleSize, $scaleSize, $scaleSize);
+    }
+}
+@keyframes loading-rotate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

@@ -1,0 +1,93 @@
+$fontSizes: (12, 14, 16, 18, 19, 20, 22);
+@each $fs in $fontSizes {
+    .font-#{$fs} {
+        font-size: #{$fs / 16}rem !important;
+    }
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul {
+    @extend .list-unstyled;
+    margin: 0;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.bg-gradient-success {
+    background: linear-gradient(87deg, #2dce89 0, #2dcecc 100%) !important;
+}
+.ms-nav {
+    position: fixed;
+    max-width: 250px;
+    min-width: 250px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    transition: all 0.3s ease;
+    z-index: 99;
+    &.active {
+        left: 0 !important;
+    }
+    &__logo {
+        img {
+            max-height: 2.5rem;
+        }
+    }
+    &__navbar {
+        .navbar__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.65rem 1.5rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            i:not(.carret) {
+                position: relative;
+                min-width: 2.25rem;
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+            span {
+                color: rgba(0, 0, 0, 0.5);
+                user-select: none;
+            }
+            &.active {
+                span {
+                    color: rgba(0, 0, 0, 0.9);
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0.25rem;
+                    bottom: 0.25rem;
+                    left: 0;
+                    right: auto;
+                    border-left: 2px solid #5e72e4;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.ms-content {
+    transition: all 0.3s ease;
+    margin-left: 250px;
+}
+.ms-backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 98;
+    display: none;
+    &.active {
+        display: block;
+    }
+}

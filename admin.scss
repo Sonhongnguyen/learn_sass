@@ -1,0 +1,30 @@
+@import "admin/core/functions";
+@import "admin/core/variables";
+@import "admin/core/mixins";
+
+@import "admin/bootstrap/root";
+@import "admin/bootstrap/reboot";
+@import "admin/bootstrap/type";
+@import "admin/bootstrap/images";
+@import "admin/bootstrap/grid";
+@import "admin/bootstrap/tables";
+@import "admin/bootstrap/forms";
+@import "admin/bootstrap/buttons";
+@import "admin/bootstrap/dropdown";
+@import "admin/bootstrap/input-group";
+@import "admin/bootstrap/custom-forms";
+@import "admin/bootstrap/breadcrumb";
+@import "admin/bootstrap/pagination";
+@import "admin/bootstrap/media";
+@import "admin/bootstrap/modal";
+@import "admin/bootstrap/utilities";
+
+@import "admin/core/utilities";
+@import "admin/core/components";
+
+@import "admin/custom";
+@import "admin/nucleo";
+@import "admin/animation";
+@import "admin/responsive";
+@import "admin/bootstrap/transitions";
+@import "admin/bootstrap/close";

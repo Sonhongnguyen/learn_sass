@@ -1,0 +1,20 @@
+.btn {
+    position: relative;
+    text-transform: $btn-text-transform;
+    transition: $transition-base;
+    letter-spacing: $btn-letter-spacing;
+    font-size: $input-btn-font-size;
+    will-change: transform;
+
+    &:hover {
+        @include box-shadow($btn-hover-box-shadow);
+        transform: translateY($btn-hover-translate-y);
+    }
+    &:not(:first-child) {
+        margin-left: 0.5rem;
+    }
+}
+
+[class*="btn-outline-"] {
+    border-width: 1px;
+}

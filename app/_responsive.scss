@@ -1,0 +1,65 @@
+@include media-breakpoint-down(lg) {
+    .ms-logo {
+        max-width: 150px;
+        min-width: 150px;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 97;
+    }
+    nav {
+        background: transparent;
+        position: relative;
+        .ms-nav {
+            position: fixed;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            top: 0;
+            left: -260px;
+            min-height: 100vh;
+            min-width: 260px;
+            max-width: 260px;
+            flex-direction: column;
+            box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+            background: $white;
+            transition: left 0.2s ease;
+            &.active {
+                left: 0;
+            }
+            > li {
+                > a,
+                > div:not(.ms-sub) {
+                    color: #000;
+                    &:hover {
+                        color: $white !important;
+                    }
+                }
+            }
+            .ms-sub {
+                background-color: transparent !important;
+                box-shadow: none;
+                position: relative;
+            }
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    .ms-search {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        .form-control {
+            border-right: 0;
+        }
+        .ms-select .selected,
+        .ms-datepicker-input {
+            border-right: 0 !important;
+        }
+    }
+}
+@include media-breakpoint-up(xl) {
+    .ms-backdrop {
+        display: none !important;
+    }
+}

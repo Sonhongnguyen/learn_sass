@@ -1,0 +1,25 @@
+@import "app/core/functions";
+@import "app/core/variables";
+@import "app/core/mixins";
+@import "app/core/components";
+
+@import "app/bootstrap/root";
+@import "app/bootstrap/reboot";
+@import "app/bootstrap/type";
+@import "app/bootstrap/images";
+@import "app/bootstrap/grid";
+@import "app/bootstrap/forms";
+@import "app/bootstrap/buttons";
+@import "app/bootstrap/transitions";
+@import "app/bootstrap/dropdown";
+@import "app/bootstrap/custom-forms";
+@import "app/bootstrap/breadcrumb";
+@import "app/bootstrap/pagination";
+@import "app/bootstrap/modal";
+@import "app/bootstrap/utilities";
+@import "app/bootstrap/nav";
+
+@import "app/custom";
+@import "app/responsive";
+@import "app/nucleo";
+@import "app/animation";

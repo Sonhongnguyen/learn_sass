@@ -1,0 +1,53 @@
+@import "../nucleo.scss";
+.icon {
+    line-height: 1.5;
+    margin-right: 0.2rem !important;
+}
+.icon-chevron-right::before {
+    content: "\ea30";
+}
+.icon-chevron-left::before {
+    content: "\ea2f";
+}
+.icon-mail::before {
+    content: "\ea92";
+}
+.icon-phone-call::before {
+    content: "\eab2";
+}
+.icon-shopping-cart::before {
+    content: "\ead5";
+}
+.icon-clock::before {
+    content: "\ea43";
+}
+.icon-users::before {
+    content: "\eb05";
+}
+.icon-truck::before {
+    content: "\eaf6";
+}
+.icon-calendar::before {
+    content: "\ea27";
+}
+.icon-map-pin::before {
+    content: "\ea93";
+}
+.icon-menu::before {
+    content: "\ea98";
+}
+.icon-search::before {
+    content: "\eacc";
+}
+.icon-arrow-right::before {
+    content: "\ea13";
+}
+.icon-arrow-down::before {
+    content: "\ea0f";
+}
+.icon-arrow-up::before {
+    content: "\ea17";
+}
+.icon-dollar-sign::before {
+    content: "\ea57";
+}

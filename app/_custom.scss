@@ -1,0 +1,243 @@
+$fontSizes: (12, 13, 14, 16, 18, 20, 22);
+@each $fs in $fontSizes {
+    .font-#{$fs} {
+        font-size: #{$fs / 16}rem !important;
+    }
+}
+$maxLines: (2, 3);
+@mixin line-clamp($line) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+@each $maxLine in $maxLines {
+    .text-maxline-#{$maxLine} {
+        @include line-clamp($maxLine);
+    }
+}
+body {
+    font-size: 14px;
+}
+ul {
+    @extend .list-unstyled;
+    margin: 0;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text-shadow {
+    text-shadow: 1px 1px #585858, -1px -1px #585858, 1px -1px #666,
+        -1px 1px #585858;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.ms-backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 98;
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.ms-title {
+    display: inline-block;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: $font-weight-bold;
+    border-bottom: 1px solid $warning;
+}
+.ms-carousel {
+    .VueCarousel {
+        .VueCarousel-navigation-next,
+        .VueCarousel-navigation-prev {
+            transform: translate(0, -50%) !important;
+        }
+        .VueCarousel-navigation-button {
+            margin: 10px;
+            padding: 0 !important;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+            background-color: $white;
+            z-index: 90;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+.ms-slide {
+    position: relative;
+    &-item {
+        padding-top: 40%;
+    }
+}
+.ms-subtitle {
+    padding-left: 10px;
+    border-left: 3px solid $warning;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.ms-footer-links {
+    a {
+        display: inline-block;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+        &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: #0087ff;
+            border-radius: 50%;
+            position: absolute;
+            top: 7px;
+            left: 5px;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.ms-tour {
+    transition: all 0.3s ease;
+    &__image {
+        position: relative;
+        padding-top: 80%;
+        overflow: hidden;
+        height: 0;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 7;
+        }
+        > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        position: relative;
+        z-index: 9;
+    }
+    &__sale {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        width: 60px;
+        height: 64px;
+        padding-top: 5px;
+        background: url("images/assets/group.png") no-repeat;
+        background-size: cover;
+        @extend .flex-center;
+        justify-content: flex-start;
+        flex-direction: column;
+        color: #fff;
+        font-weight: $font-weight-bold;
+        z-index: 10;
+    }
+    &__title {
+        color: #333 !important;
+        transition: all 0.2s ease;
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 12px;
+    }
+}
+.img-fit {
+    object-fit: cover;
+}
+.ms-logo {
+    max-width: 222px;
+    min-width: 222px;
+}
+.ms-search {
+    position: relative;
+}
+nav {
+    background: $primary;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    .ms-nav {
+        display: flex;
+        position: relative;
+        > li {
+            > a,
+            > div:not(.ms-sub) {
+                display: block;
+                padding: 12px 16px;
+                color: $white;
+                font-weight: 600;
+                text-transform: uppercase;
+                transition: all 0.2s ease;
+                cursor: pointer;
+                user-select: none;
+                &:hover,
+                &.active {
+                    background: $warning;
+                }
+            }
+        }
+        .ms-sub {
+            padding: 16px;
+            position: absolute;
+            display: flex;
+            left: 0;
+            width: 100%;
+            border-radius: 0 0 4px 4px;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.4);
+        }
+    }
+}
+.router-link-exact-active {
+    background-color: $warning;
+    color: $white !important;
+}
+.ms-sub {
+    .router-link-exact-active {
+        background-color: $white;
+        color: $warning !important;
+    }
+}
+.ms-form {
+    background-attachment: fixed;
+    background-image: url("images/assets/apphic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
